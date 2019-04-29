@@ -5,6 +5,14 @@ jest.mock('react-native')
 let returnArguments = (...args) => args
 
 describe('Emotion native css', () => {
+  test('interpolation of numbers', () => {
+    expect(
+      css`
+        opacity: ${0.5};
+      `
+    ).toEqual({ opacity: 0.5 })
+  })
+
   test('basic', () => {
     expect(css`
       color: hotpink;
